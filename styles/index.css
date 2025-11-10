@@ -1,0 +1,124 @@
+/* INFORMAÇÕES */
+.apresentacao {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1120px;
+    min-height: 550px;
+    height: auto;
+
+    overflow: visible;
+
+    gap: calc(var(--espaco-entre-elementos) * 2);
+}
+
+.apresentacao-texto {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--espaco-entre-elementos) * 3);
+    margin-right: 3rem;
+    flex: 1 1 60%; /* permite crescer/encolher dentro do container */
+    min-width: 0; /* crucial para evitar overflow em flexbox */
+    padding: 0 1rem;
+}
+
+.apresentacao-texto h1 {
+    font-family: var(--fonte-secundaria);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    letter-spacing: 0.02em;
+}
+
+.apresentacao-texto p {
+    font-family: var(--fonte-principal);
+    font-size: clamp(0.75rem, 1.5vw, 1.25rem);
+    line-height: 1.75;
+    letter-spacing: 0.08em;
+}
+
+/* BOTÕES */
+.apresentacao-botoes {
+    display: flex;
+    gap: calc(var(--espaco-entre-elementos) * 2);
+    flex-direction: column;
+    align-items: center;
+}
+
+.apresentacao-botoes h2 {
+    font-family: var(--fonte-secundaria);
+    word-spacing: 0.08em;
+    font-size: 1.5rem;
+}
+
+a.botao {
+    font-family: var(--fonte-principal);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--cor-texto);
+    border-radius: calc(var(--raio-borda) / 2);
+    border: 2px solid var(--cor-destaque);
+    gap: var(--espaco-entre-elementos);
+    
+    padding: 16px;
+    min-width: 85%; /* remove largura fixa que causava overflow */
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 45px;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: calc(var(--tamanho-fonte) * 1.5);
+}
+
+a.botao i,
+a.botao svg {
+    color: var(--cor-destaque);
+    transition: color 0.3s;
+}
+
+a.botao:hover i,
+a.botao:hover svg {
+    color: black;
+}
+
+a.botao:hover {
+    background-color: var(--cor-destaque);
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .cabecalho {margin-top: 0; margin-bottom: 0; }
+    .cabecalho-nav {display: flex; justify-content: center; align-items: center; gap: 5rem; padding-top: 8rem; padding-bottom: 8rem; }
+    .apresentacao { flex-direction: column-reverse; align-items: center; gap: 6rem }
+    .apresentacao-sobre { margin-right: 0; text-align: left; gap: 2.5rem; padding-left: 3.75rem; padding-right: 3.75rem; }
+    .apresentacao-sobre h1 { font-size: 2.5em;line-height: 3.5rem; }
+    .apresentacao-sobre p { font-size: 1.5em;line-height: 1rem; }
+    .apresentacao-imagem {display: flex; justify-content: center; align-items: center;width: 100%; max-width: 26.25rem; padding: 3px; }
+    .apresentacao-texto { margin-right: 0; padding-left: 5rem; padding-right: 5rem; }   
+    a.botao {width: 75%; white-space: normal; }
+    footer {display: flex; align-items: center; justify-content: center; font-size: 1.125rem; height: 5rem; }
+    .cabecalho-nav { display: flex; justify-content: center; align-items: center;}
+}
+
+@media (max-width: 455px) {
+    .cabecalho-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
+    .cabecalho-nav-link {
+        flex: 0 0 100%;
+        text-align: center;
+        padding: 0.6rem 0.75rem;
+        box-sizing: border-box;
+        word-break: break-word;
+    }
+}

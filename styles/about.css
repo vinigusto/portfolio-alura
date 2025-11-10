@@ -1,0 +1,67 @@
+/* INFORMAÇÕES */
+.apresentacao {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    max-width: 1120px;
+    min-height: 550px;
+    height: auto;
+}
+
+.apresentacao-sobre {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    gap: calc(var(--espaco-entre-elementos) * 3.5);
+    margin-right: 5rem;
+    flex: 1 1 60%;
+    min-width: 0;
+    
+    line-height: 1.75;
+    letter-spacing: 0.08em;
+    padding: 0 1rem;
+}
+
+.titulo-sobre h1 {
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao-sobre h4 {
+    font-family: var(--fonte-principal);
+    font-weight: normal;
+}
+
+@media (max-width: 1200px) {
+    .cabecalho {margin-top: 0; margin-bottom: 0; }
+    .cabecalho-nav {display: flex; justify-content: center; align-items: center; gap: 5rem; padding-top: 8rem; padding-bottom: 8rem; }
+    .apresentacao { flex-direction: column-reverse; align-items: center; gap: 6rem }
+    .apresentacao-sobre { margin-right: 0; text-align: left; gap: 2.5rem; padding-left: 3.75rem; padding-right: 3.75rem; }
+    .apresentacao-sobre h1 { font-size: 2.5em;line-height: 3.5rem; }
+    .apresentacao-sobre p { font-size: 1.5em;line-height: 1rem; }
+    .apresentacao-imagem {display: flex; justify-content: center; align-items: center;width: 100%; max-width: 26.25rem; padding: 3px; }
+    .apresentacao-texto { margin-right: 0; padding-left: 5rem; padding-right: 5rem; }   
+    a.botao {width: 75%; white-space: normal; }
+    footer {display: flex; align-items: center; justify-content: center; font-size: 1.125rem; height: 5rem; }
+}
+
+@media (max-width: 455px) {
+
+    .cabecalho-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        align-items: center;
+        margin-bottom: 5rem;
+    }
+    .cabecalho-nav-link {
+        flex: 0 0 100%;
+        text-align: center;
+        padding: 0.6rem 0.75rem;
+        box-sizing: border-box;
+        word-break: break-word;
+    }
+}
